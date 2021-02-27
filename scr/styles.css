@@ -1,0 +1,107 @@
+body {
+  background: #b490ca86;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+}
+h2 {
+  font-size: 35px;
+  font-family: "Poppins", sans-serif;
+  padding: 0 25 0 25;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 100;
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  opacity: 70%;
+}
+form {
+  font-family: "Poppins", sans-serif;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+input {
+  border-radius: 5px;
+  border-color: teal;
+  margin-bottom: 10px;
+}
+
+i {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: teal;
+}
+
+img {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container1 {
+  margin-top: 100px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 0;
+}
+
+.container2 {
+  margin-top: 100px;
+  max-width: 550px;
+  background-color: white;
+  border-radius: 25px;
+  padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.current_weather_icon {
+  color: #ffae00;
+}
+
+.search_button,
+.current_button {
+  background-color: teal;
+  border-color: teal;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.current_weather {
+  border: 2px solid rgba(128, 128, 128, 0.575);
+  border-radius: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+  max-width: 500px;
+  background-color: rgba(128, 128, 128, 0.205);
+}
+
+.weather_forecast {
+  padding: 10px;
+  max-width: 500px;
+}
+.temperature {
+  font-size: 70px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  position: relative;
+  top: -15px;
+}
+.units {
+  position: relative;
+  top: -50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+}
