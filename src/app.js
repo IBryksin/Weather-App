@@ -1,16 +1,12 @@
-function formatDate(date) {
-  let dateElement = document.querySelector("#current-date");
-  let currentTime = new Date();
-  let hours = date.getHours();
-  if (hours < 10) {
+function formatDate(timestamp) {
+let date = new Date (timestamp);
+let hours = date.getHours();
+if (hours < 10) {
     hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
+let minutes = date.getMinutes();
+if (minutes < 10) {
     hours = `0${minutes}`;
-  }
-  let day = date.getDay();
-  let days = [
+let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -19,9 +15,10 @@ function formatDate(date) {
     "Friday",
     "Saturday"
   ];
-
-  return `${days[day]}, ${hours}:${minutes}`;
+let day = days[date.getDay()];
+return `${day}, ${hours}:${minutes}`;
 }
+
 function displayCurrentWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -33,6 +30,7 @@ function displayCurrentWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+    dateElement.innerHTML = formatDate(response.data.dt*1000);
 }
 function searchCity(city) {
   let units = "metric";
@@ -79,7 +77,6 @@ let dateElement = document.querySelector("#current-date");
 let searchForm = document.querySelector("#search-form");
 let currentTime = new Date();
 searchForm.addEventListener("submit", handleSubmit);
-dateElement.innerHTML = formatDate(currentTime);
 let currentLocationButton = document.querySelector("#current_location_button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("New York");
