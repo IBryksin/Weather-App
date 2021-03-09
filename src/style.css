@@ -73,7 +73,7 @@ p {
 
 .current_weather_icon {
   position: relative;
-  top: -25px;
+  top: -20px;
   left: -15px;
 }
 .col-2 {
@@ -108,7 +108,7 @@ p {
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   position: relative;
-  top: -15px;
+  top: -10px;
 }
 
 .units {
