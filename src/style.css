@@ -73,8 +73,8 @@ p {
 
 .current_weather_icon {
   position: relative;
-  top: -22px;
-  right: 15px;
+  top: -25px;
+  left: -15px;
 }
 
 .search_button,
@@ -101,7 +101,7 @@ p {
   max-width: 500px;
 }
 .temperature {
-  font-size: 60px;
+  font-size: 55px;
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   position: relative;
