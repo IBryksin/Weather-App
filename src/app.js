@@ -22,6 +22,7 @@ return `${day}, ${hours}:${minutes}`;
 }
 
 function displayCurrentWeather(response) {
+  let iconElement = document.querySelector ("#icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -32,8 +33,10 @@ function displayCurrentWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-    dateElement.innerHTML = formatDate(response.data.dt*1000);
+  dateElement.innerHTML = formatDate(response.data.dt*1000);
+  iconElement.setAttribute ("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
+
 function searchCity(city) {
   let units = "metric";
   let apiKey = "b4f47527f11e0a88d5be98d6f705a44d";
@@ -59,6 +62,14 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+let dateElement = document.querySelector("#current-date");
+let searchForm = document.querySelector("#search-form");
+let currentTime = new Date();
+searchForm.addEventListener("submit", handleSubmit);
+let currentLocationButton = document.querySelector("#current_location_button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+searchCity("New York");
+
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -74,11 +85,3 @@ function convertToCelsius(event) {
   temperature = Number(temperature);
   temperatureElement.innerHTML = 4;
 }
-
-let dateElement = document.querySelector("#current-date");
-let searchForm = document.querySelector("#search-form");
-let currentTime = new Date();
-searchForm.addEventListener("submit", handleSubmit);
-let currentLocationButton = document.querySelector("#current_location_button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-searchCity("New York");

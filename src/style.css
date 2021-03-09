@@ -71,7 +71,9 @@ p {
 }
 
 .current_weather_icon {
-  color: #ffae00;
+  position: relative;
+  top: -22px;
+  right: 15px;
 }
 
 .search_button,
