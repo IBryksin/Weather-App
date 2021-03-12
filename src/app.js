@@ -65,12 +65,16 @@ function getCurrentLocation(event) {
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add ("active");
   let temperature = Math.round(celciusTemperature);
 }
 
 function showFahrenheitTemperature (event){
   event.preventDefault();
   let temperatureElement = document.querySelector ("#temperature");
+  celsiusLink.classList.remove ("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round (fahrenheitTemperature);
 }
