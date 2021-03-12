@@ -24,9 +24,9 @@ return `${day}, ${hours}:${minutes}`;
 function displayCurrentWeather(response) {
   let iconElement = document.querySelector ("#icon");
   document.querySelector("#city").innerHTML = response.data.name;
+  let celciusTemperature = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+    celciusTemperature);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -62,6 +62,27 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = Math.round(celciusTemperature);
+}
+
+function showFahrenheitTemperature (event){
+  event.preventDefault();
+  let temperatureElement = document.querySelector ("#temperature");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round (fahrenheitTemperature);
+}
+
+let celciusLink = document.querySelector ("#celcius-link");
+celciusLink.addEventListener ("click", showCelciusTemperature);
+
+let fahrenheitLink = document.querySelector ("#fahrenheit-link");
+fahrenheitLink.addEventListener ("click", showFahrenheitTemperature);
+
+let celciusTemperature = null;
+
 let dateElement = document.querySelector("#current-date");
 let searchForm = document.querySelector("#search-form");
 let currentTime = new Date();
@@ -69,19 +90,3 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current_location_button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("New York");
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = 4;
-}
