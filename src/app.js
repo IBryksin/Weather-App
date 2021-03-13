@@ -39,7 +39,7 @@ function displayCurrentWeather(response) {
 
 function searchCity(city) {
   let units = "metric";
-  let apiKey = "b4f47527f11e0a88d5be98d6f705a44d";
+  let apiKey = "a12ce643488a623cc0c6079609171e2d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayCurrentWeather);
 }
@@ -51,7 +51,7 @@ function handleSubmit(event) {
 function searchLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = "b4f47527f11e0a88d5be98d6f705a44d";
+  let apiKey = "a12ce643488a623cc0c6079609171e2d";
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayCurrentWeather);
@@ -94,3 +94,4 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current_location_button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("New York");
+let apiKey = "a12ce643488a623cc0c6079609171e2d";
