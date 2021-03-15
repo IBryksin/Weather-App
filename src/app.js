@@ -27,6 +27,8 @@ function displayCurrentWeather(response) {
   celsiusTemperature = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(
     celsiusTemperature);
+  document.querySelector ("#temperature-min").innerHTML = Math.round (response.data.main.temp_min);
+  document.querySelector ("#temperature-max").innerHTML = Math.round (response.data.main.temp_max);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
